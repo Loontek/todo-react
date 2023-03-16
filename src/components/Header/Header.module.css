@@ -1,0 +1,16 @@
+.header {
+	display: flex;
+	width: 100%;
+	height: max-content;
+	justify-content: space-between;
+
+}
+
+.title {
+	font-weight: 700;
+	font-size: 32px;
+	text-transform: uppercase;
+	color: var(--white);
+	letter-spacing: 10px;
+	margin: 0;
+}

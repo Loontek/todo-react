@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import styles from "./App.module.css";
+import { Container } from "./components/Container/Container";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { MainFooter } from "./components/MainFooter/MainFooter";
+import { MobileCategoryNavigation } from "./components/MobileCategoryNavigation/MobileCategoryNavigation";
+import { TodoInput } from "./components/TodoInput/TodoInput";
+import { TodoList } from "./components/TodoList/TodoList";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const categories = ["All", "Active", "Completed"];
+  const [theme, setTheme] = useState("Dark");
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className={`${styles.App} ${styles[`App${theme}`]}`}>
+      <Container>
+        <Header setTheme={setTheme} />
+        <TodoInput />
+        <main className={styles.main}>
+          <TodoList />
+          <MainFooter categories={categories} />
+          <MobileCategoryNavigation categories={categories} />
+        </main>
+        <Footer />
+      </Container>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

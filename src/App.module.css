@@ -1,0 +1,58 @@
+@import './styles/colors.scss';
+
+/* .App {
+	padding: 10vw 0 50px 0;
+	box-sizing: border-box;
+	font-family: 'Josefin Sans';
+	display: flex;
+	justify-content: center;
+} */
+
+.App {
+	padding: 12vw 0 50px 0;
+	font-family: 'Josefin Sans';
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.AppDark {
+		background: 
+			top / contain no-repeat url(./img/bg-desktop-dark.jpg),
+			hsl(235, 21%, 11%);
+	}
+
+.AppLight {
+		background: 
+			top / contain no-repeat url(./img/bg-desktop-light.jpg),
+			hsl(0, 0%, 98%);
+	}
+
+@media all and (max-width:650px) {
+    .App {
+      	padding: 30vw 0 50px 0;
+    }
+
+    .AppDark {
+      	background: 
+				top / contain no-repeat url(./img/bg-mobile-dark.jpg),
+				hsl(235, 21%, 11%);
+    }
+
+    .AppLight {
+    	background: 
+        top / contain no-repeat url(./img/bg-mobile-light.jpg),
+        hsl(0, 0%, 98%);
+    }
+}
+
+.main {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: 0 0px 20px var(--shadow);
+	border-radius: 5px;
+	overflow: hidden;
+}

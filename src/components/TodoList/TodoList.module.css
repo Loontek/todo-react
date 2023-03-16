@@ -1,0 +1,9 @@
+.TodoList {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	transition: max-height .5s;
+}

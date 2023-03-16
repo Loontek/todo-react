@@ -1,0 +1,21 @@
+.Container {
+	width: 50%;
+	max-width: 600px;
+	min-width: 230px;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+@media all and (max-width:1000px) {
+	.Container {
+		width: 60%;
+	}
+}
+
+@media all and (max-width:650px) {
+	.Container {
+		width: 80%;
+	}
+}

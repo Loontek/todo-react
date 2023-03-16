@@ -1,0 +1,31 @@
+.DesktopLink {
+	color: var(--footer-text);
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: 700;
+}
+	
+.DesktopLink_active {
+	color: var(--active-link);
+	font-size: 12px;
+}
+	
+.DesktopLink:hover {
+	color: var(--main-text);
+}
+
+.MobileLink {
+	color: var(--footer-text);
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.MobileLink_active {
+	color: var(--active-link);
+	text-decoration: none;
+}
+
+.MobileLink:hover {
+	color: var(--main-text);
+}

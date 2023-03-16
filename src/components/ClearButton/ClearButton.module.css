@@ -1,0 +1,15 @@
+.ClearBtn {
+	background: transparent;
+	color: var(--footer-text);
+	cursor: pointer;
+	border: none;
+	font-size: 12px;
+}
+
+.ClearBtn:focus {
+	outline: none;
+}
+
+.ClearBtn:hover {
+	color: var(--main-text);
+}
