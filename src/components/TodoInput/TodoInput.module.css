@@ -34,7 +34,11 @@
 }
 
 .addBtn:hover {
-	background: hsl(220, 83%, 69%);
+	background: hsl(220, 83%, 73%);
+}
+
+.addBtn:active {
+	transform: translateY(1px);
 }
 
 .TodoInput label {

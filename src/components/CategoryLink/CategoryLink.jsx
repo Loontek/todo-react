@@ -1,10 +1,11 @@
 import styles from "./CategoryLink.module.css";
 
 export const CategoryLink = ({ categoryName, className }) => {
-  //   console.log(styles);
+  const classNames = className.split(" ").map((className) => `${styles[className]}`);
+
   return (
     <li>
-      <a className={styles[className]} href="#">
+      <a className={classNames.join(" ")} href="#" data-category={categoryName}>
         {categoryName}
       </a>
     </li>
