@@ -1,11 +1,11 @@
 import { ThemeButton } from "../ThemeButton/ThemeButton";
 import styles from "./Header.module.css";
 
-export const Header = ({ theme, changeTheme }) => {
+export const Header = ({ theme, toggleTheme }) => {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>Todo</h1>
-      <ThemeButton theme={theme} changeTheme={changeTheme} />
+      <ThemeButton theme={theme} toggleTheme={toggleTheme} />
     </header>
   );
 };

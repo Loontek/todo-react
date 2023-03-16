@@ -10,11 +10,29 @@ import { TodoList } from "./components/TodoList/TodoList";
 
 function App() {
   const categories = ["All", "Active", "Completed"];
-  const [theme, setTheme] = useState("Dark");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? JSON.parse(localStorage.getItem("theme")) : "Dark"
+  );
   const [todoInputValue, setTodoInputValue] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(
+    localStorage.getItem("todoList") ? JSON.parse(localStorage.getItem("todoList")) : []
+  );
   const [todoItemsCounter, setTodoItemsCounter] = useState(0);
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const [activeCategory, setActiveCategory] = useState(
+    localStorage.getItem("activeCategory") ? JSON.parse(localStorage.getItem("activeCategory")) : categories[0]
+  );
+
+  useEffect(() => {
+    localStorage.setItem("activeCategory", JSON.stringify(activeCategory));
+  }, [activeCategory]);
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
   useEffect(() => {
     setTodoItemsCounter(todoList.filter((item) => !item.isCompleted).length);
@@ -72,14 +90,14 @@ function App() {
     setTodoList(todoList.filter((item) => !item.isCompleted));
   };
 
-  const changeTheme = () => {
+  const toggleTheme = () => {
     setTheme(theme === "Dark" ? "Light" : "Dark");
   };
 
   return (
     <div className={`${styles.App}`} data-theme={theme}>
       <Container>
-        <Header theme={theme} changeTheme={changeTheme} />
+        <Header theme={theme} toggleTheme={toggleTheme} />
         <TodoInput todoInputValue={todoInputValue} handleInput={handleInput} addTodo={addTodo} />
         <main className={styles.main}>
           <TodoList
