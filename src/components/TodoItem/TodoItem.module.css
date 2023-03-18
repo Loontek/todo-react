@@ -11,6 +11,10 @@
   cursor: grab;
 }
 
+.todoItem .text {
+  pointer-events: none;
+}
+
 .todoItem_selected {
   opacity: 0.6;
 }
@@ -87,6 +91,10 @@
 
 .todoItem:focus {
   outline: none;
+}
+
+.dragging {
+  opacity: .5;
 }
 
 @media all and (max-width: 650px) {

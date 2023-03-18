@@ -55,16 +55,8 @@ function App() {
     setTodoInputValue("");
   };
 
-  const deleteTodo = (e) => {
-    if (e.target.tagName === "IMG") {
-      setTodoList(todoList.filter((item) => item.id !== +e.target.parentNode.dataset.id));
-      return;
-    }
-
-    if (e.target.tagName === "BUTTON") {
-      setTodoList(todoList.filter((item) => item.id !== +e.target.dataset.id));
-      return;
-    }
+  const deleteTodo = (id) => {
+    setTodoList(todoList.filter((item) => item.id !== id));
   };
 
   const handleCheck = (e) => {
@@ -106,6 +98,7 @@ function App() {
             handleCheck={handleCheck}
             activeCategory={activeCategory}
             categories={categories}
+            setTodoList={setTodoList}
           />
           <MainFooter
             categories={categories}
