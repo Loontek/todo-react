@@ -11,7 +11,7 @@ import { TodoList } from "./components/TodoList/TodoList";
 function App() {
   const categories = ["All", "Active", "Completed"];
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? JSON.parse(localStorage.getItem("theme")) : "Dark"
+    localStorage.getItem("theme") ? JSON.parse(localStorage.getItem("theme")) : "dark"
   );
   const [todoInputValue, setTodoInputValue] = useState("");
   const [todoList, setTodoList] = useState(
@@ -83,7 +83,7 @@ function App() {
   };
 
   const toggleTheme = () => {
-    setTheme(theme === "Dark" ? "Light" : "Dark");
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (

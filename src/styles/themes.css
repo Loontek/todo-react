@@ -15,7 +15,7 @@
 	--active-link:hsl(220, 86%, 67%);
 }
 
-[data-theme="Light"] {
+[data-theme="light"] {
 	background: top / contain no-repeat url(./img/bg-desktop-light.jpg),hsl(0, 0%, 98%);
 	--main-background: hsl(0, 0%, 98%);
 	--todo-background: hsl(0, 100%, 100%);
