@@ -1,0 +1,5 @@
+.todoItemCounter {
+	display: block;
+	font-size: 12px;
+	color: var(--footer-text);
+}

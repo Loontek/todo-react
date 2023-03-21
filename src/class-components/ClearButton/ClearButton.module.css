@@ -1,0 +1,15 @@
+.clearBtn {
+	background: transparent;
+	color: var(--footer-text);
+	cursor: pointer;
+	border: none;
+	font-size: 12px;
+}
+
+.clearBtn:focus {
+	outline: none;
+}
+
+.clearBtn:hover {
+	color: var(--main-text);
+}

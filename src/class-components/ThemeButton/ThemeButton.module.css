@@ -1,0 +1,10 @@
+.themeBtn {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+
+}
+
+.themeBtn:focus {
+	outline: none;
+}

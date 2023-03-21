@@ -1,0 +1,20 @@
+.todo {
+	padding: 12vw 0 50px 0;
+	font-family: 'Josefin Sans';
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.todo:focus {
+	outline: none;
+	border: none;
+}
+
+@media all and (max-width:650px) {
+    .todo {
+      	padding: 30vw 0 50px 0;
+    }
+}
