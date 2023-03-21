@@ -1,9 +1,11 @@
 import styles from "./ClearButton.module.css";
 
-export const ClearButton = ({ clearCompleted }) => {
+const ClearButton = ({ clearCompleted }) => {
   return (
-    <button className={styles.ClearBtn} type="button" title="Clear completed button" onClick={clearCompleted}>
+    <button className={styles.clearBtn} type="button" title="Clear completed button" onClick={clearCompleted}>
       Clear Completed
     </button>
   );
 };
+
+export default ClearButton;

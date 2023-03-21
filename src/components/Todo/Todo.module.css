@@ -1,6 +1,4 @@
-@import './styles/themes.css';
-
-.App {
+.todo {
 	padding: 12vw 0 50px 0;
 	font-family: 'Josefin Sans';
 	display: flex;
@@ -10,13 +8,13 @@
 	box-sizing: border-box;
 }
 
-.App:focus {
+.todo:focus {
 	outline: none;
 	border: none;
 }
 
 @media all and (max-width:650px) {
-    .App {
+    .todo {
       	padding: 30vw 0 50px 0;
     }
 }

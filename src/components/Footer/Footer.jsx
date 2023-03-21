@@ -1,9 +1,11 @@
 import styles from "./Footer.module.css";
 
-export const Footer = () => {
+const Footer = () => {
   return (
-    <footer className={styles.Footer}>
+    <footer className={styles.footer}>
       <span>Drag and drop to reorder list</span>
     </footer>
   );
 };
+
+export default Footer;

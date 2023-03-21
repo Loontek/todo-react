@@ -1,29 +1,52 @@
-import { TodoItem } from "../TodoItem/TodoItem";
+import TodoItem from "../TodoItem/TodoItem";
 import styles from "./TodoList.module.css";
 import { Reorder } from "framer-motion";
+import { useEffect, useState } from "react";
 
-export const TodoList = ({ todoList, deleteTodo, handleCheck, activeCategory, setTodoList }) => {
-  const active = todoList.filter((item) => !item.isCompleted);
-  const completed = todoList.filter((item) => item.isCompleted);
-  const all = todoList;
-  const todoLists = {
-    All: todoList,
-    Active: todoList.filter((item) => !item.isCompleted),
-    Completed: todoList.filter((item) => item.isCompleted),
-  };
+const TodoList = ({ todoList, activeCategory, setTodoList }) => {
+  const [allItems, setAllItems] = useState([]);
+  const [activeItems, setActiveItems] = useState([]);
+  const [completedItems, setCompletedItems] = useState([]);
+  const actualTodoList =
+    activeCategory === "active" ? activeItems : activeCategory === "completed" ? completedItems : allItems;
+
+  useEffect(() => {
+    setAllItems(todoList);
+    setActiveItems(todoList.filter((item) => !item.isCompleted));
+    setCompletedItems(todoList.filter((item) => item.isCompleted));
+  }, [todoList]);
 
   const handleReorder = (list) => {
-    if (activeCategory === "Active") {
-      setTodoList([...completed, ...list]);
+    if (activeCategory === "active") {
+      setTodoList([...completedItems, ...list]);
       return;
     }
 
-    if (activeCategory === "Completed") {
-      setTodoList([...list, ...active]);
+    if (activeCategory === "completed") {
+      setTodoList([...list, ...activeItems]);
       return;
     }
 
     setTodoList(list);
+  };
+
+  const deleteTodo = (id) => {
+    setTodoList(todoList.filter((item) => item.id !== id));
+  };
+
+  const handleCheck = (e) => {
+    setTodoList(
+      todoList.map((item) => {
+        if (item.id === +e.target.dataset.id) {
+          item = {
+            ...item,
+            isCompleted: e.target.checked,
+          };
+        }
+
+        return item;
+      })
+    );
   };
 
   return (
@@ -31,13 +54,17 @@ export const TodoList = ({ todoList, deleteTodo, handleCheck, activeCategory, se
       axis="y"
       values={todoList}
       onReorder={handleReorder}
-      className={styles.TodoList}
+      className={styles.todoList}
       layout
-      animate={{ height: `${todoLists[activeCategory].length * 50}px` }}
+      animate={{
+        height: `${actualTodoList.length * 50}px`,
+      }}
     >
-      {todoLists[activeCategory].map((item) => (
+      {actualTodoList.map((item) => (
         <TodoItem key={item.id} item={item} deleteTodo={deleteTodo} handleCheck={handleCheck} />
       ))}
     </Reorder.Group>
   );
 };
+
+export default TodoList;

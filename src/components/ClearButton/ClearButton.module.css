@@ -1,4 +1,4 @@
-.ClearBtn {
+.clearBtn {
 	background: transparent;
 	color: var(--footer-text);
 	cursor: pointer;
@@ -6,10 +6,10 @@
 	font-size: 12px;
 }
 
-.ClearBtn:focus {
+.clearBtn:focus {
 	outline: none;
 }
 
-.ClearBtn:hover {
+.clearBtn:hover {
 	color: var(--main-text);
 }

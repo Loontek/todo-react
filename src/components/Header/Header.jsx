@@ -1,7 +1,7 @@
-import { ThemeButton } from "../ThemeButton/ThemeButton";
+import ThemeButton from "../ThemeButton/ThemeButton";
 import styles from "./Header.module.css";
 
-export const Header = ({ theme, toggleTheme }) => {
+const Header = ({ theme, toggleTheme }) => {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>Todo</h1>
@@ -9,3 +9,5 @@ export const Header = ({ theme, toggleTheme }) => {
     </header>
   );
 };
+
+export default Header;

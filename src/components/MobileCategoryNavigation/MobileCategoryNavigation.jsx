@@ -1,18 +1,20 @@
-import { CategoryLink } from "../CategoryLink/CategoryLink";
+import CategoryLink from "../CategoryLink/CategoryLink";
 import styles from "./MobileCategoryNavigation.module.css";
 
-export const MobileCategoryNavigation = ({ categories, activeCategory, changeCategory }) => {
+const MobileCategoryNavigation = ({ categories, activeCategory }) => {
   return (
-    <nav className={styles.MobileCategoryNavigation} onClick={changeCategory}>
+    <nav className={styles.mobileCategoryNavigation}>
       <ul>
         {categories.map((category, i) => (
           <CategoryLink
             key={i}
             categoryName={category}
-            className={category === activeCategory ? "MobileLink MobileLink_active" : "MobileLink"}
+            classNames={category === activeCategory ? ["mobileLink", "mobileLink_active"] : ["mobileLink"]}
           />
         ))}
       </ul>
     </nav>
   );
 };
+
+export default MobileCategoryNavigation;

@@ -1,4 +1,4 @@
-.Container {
+.container {
 	width: 50%;
 	max-width: 600px;
 	min-width: 230px;
@@ -9,13 +9,13 @@
 }
 
 @media all and (max-width:1000px) {
-	.Container {
+	.container {
 		width: 60%;
 	}
 }
 
 @media all and (max-width:650px) {
-	.Container {
+	.container {
 		width: 80%;
 	}
 }

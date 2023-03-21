@@ -1,4 +1,4 @@
-.MobileCategoryNavigation {
+.mobileCategoryNavigation {
 	width: 100%;
 	display: none;
 	justify-content: center;
@@ -10,7 +10,7 @@
 	border-radius: 5px;
 }
 
-.MobileCategoryNavigation ul {
+.mobileCategoryNavigation ul {
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -22,7 +22,7 @@
 }
 
 @media all and (max-width:650px) {
-	.MobileCategoryNavigation {
+	.mobileCategoryNavigation {
 		display: flex;
 	}
 }

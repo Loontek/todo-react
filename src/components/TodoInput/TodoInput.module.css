@@ -1,4 +1,4 @@
-.TodoInput {
+.todoInput {
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -41,7 +41,16 @@
 	transform: translateY(1px);
 }
 
-.TodoInput label {
+.addBtn:disabled {
+	background: hsl(220, 65%, 84%);
+	cursor: not-allowed;
+}
+
+.addBtn:disabled:active {
+	transform: translateY(0);
+}
+
+.todoInput label {
 	display: block;
 	min-width: 20px;
 	width: 20px;
